@@ -1,0 +1,25 @@
+conf t
+hostname SW-02
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
+enable secret BEAMI*enable
+line console 0
+password BEAMI*console
+login
+ip domain-name 1rede.local
+crypto key generate rsa general-key modulus 1024
+line vty 0 15
+transport input ssh
+password BEAMI*vty
+login
+username beami privilege 15 secret 123
+line console 0
+login local
+line vty 0 15
+login local
+exit
+interface vlan 1
+ip address 172.16.0.254 255.255.0.0
+no shut
+service password-encryption
+exit
+wr
