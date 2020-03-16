@@ -19,7 +19,7 @@ line vty 0 15
 login local
 exit
 interface vlan 1
-ip address 172.16.0.254 255.255.0.0
+ip address 172.16.255.254 255.255.0.0
 no shut
 service password-encryption
 exit
