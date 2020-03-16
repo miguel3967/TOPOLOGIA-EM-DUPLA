@@ -1,3 +1,4 @@
+enable
 conf t
 hostname SW-02
 banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS!"
